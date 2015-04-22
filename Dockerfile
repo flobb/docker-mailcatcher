@@ -7,7 +7,7 @@ RUN \
   apt-get install --no-install-recommends -y ruby sqlite3 && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Install build tools, then install mailcatcher, the remove build tools
+# Install build tools, then install mailcatcher, then remove build tools
 RUN \
   apt-get update -qq && \
   apt-get install --no-install-recommends -y build-essential ruby-dev libsqlite3-dev  && \
@@ -18,7 +18,6 @@ RUN \
   apt-get autoclean && apt-get clean && \
 
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
 
 EXPOSE 80
 EXPOSE 25
